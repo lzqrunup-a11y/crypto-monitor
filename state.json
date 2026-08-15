@@ -1,0 +1,17 @@
+{
+  "positions": {
+    "TUTUSDT": {
+      "symbol": "TUTUSDT",
+      "positionAmt": "-981",
+      "entryPrice": "0.030549999999999997",
+      "leverage": "3"
+    },
+    "CROSSUSDT": {
+      "symbol": "CROSSUSDT",
+      "positionAmt": "-316",
+      "entryPrice": "0.09484420886075948",
+      "leverage": "3"
+    }
+  },
+  "last_check": "2026-08-15 08:31:24"
+}
