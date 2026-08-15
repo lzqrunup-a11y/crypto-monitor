@@ -1,0 +1,17 @@
+name: Diag
+on:
+  workflow_dispatch:
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check IP and region
+        run: |
+          echo "Runner IP: $(curl -s --max-time 10 https://api.ipify.org)"
+          echo "Region: $(curl -s --max-time 10 https://ipinfo.io/json | head -20)"
+          echo "---"
+          echo "fapi.binance.com ping:"
+          curl -s -o /dev/null -w "HTTP %{http_code}\n" --max-time 10 https://fapi.binance.com/fapi/v1/ping
+          echo "fapi.binance.com positionRisk (no auth):"
+          curl -s -o /dev/null -w "HTTP %{http_code}\n" --max-time 10 "https://fapi.binance.com/fapi/v2/positionRisk"
